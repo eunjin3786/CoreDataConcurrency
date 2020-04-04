@@ -15,6 +15,9 @@ class CoreDataManager {
     }()
     
     lazy var backgroundContext: NSManagedObjectContext = {
+//        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+//        context.parent = persistentContainer.viewContext
+//        return context
         return persistentContainer.newBackgroundContext()
     }()
 
